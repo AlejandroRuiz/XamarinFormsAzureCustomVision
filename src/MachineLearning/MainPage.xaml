@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:local="clr-namespace:MachineLearning"
+  x:Class="MachineLearning.MainPage"
+  xmlns:vm="clr-namespace:MachineLearning.ViewModel">
+    <ContentPage.BindingContext>
+        <vm:MainViewModel />
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <StackLayout VerticalOptions="Center">
+            <Button Command="{Binding DetectCommand}" Text="Detect Pikachu" />
+            <Image Source="{Binding CurrentPhoto}" HorizontalOptions="Center" Aspect="AspectFill" HeightRequest="300" WidthRequest="300" />
+            <Label Margin="50,0" Text="{Binding Results}" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
