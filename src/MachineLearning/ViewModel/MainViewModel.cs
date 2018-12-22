@@ -74,7 +74,9 @@ namespace MachineLearning.ViewModel
             {
                 CurrentPhoto = ImageSource.FromStream(() => file.GetStream());
                 UserDialogs.Instance.ShowLoading("Running ML Script", MaskType.Gradient);
+
                 var mlResult = await _machineLearningManager.AnalizeImageAsync(ML_MODEL_NAME, file.GetStream());
+
                 UserDialogs.Instance.HideLoading();
                 if (mlResult != null)
                 {
